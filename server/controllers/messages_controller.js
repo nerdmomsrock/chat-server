@@ -1,5 +1,5 @@
-var messages = [];
-var id = 0;
+let messages = [];
+let id = 0;
 
 module.exports = {
   create: (req, res) => {
