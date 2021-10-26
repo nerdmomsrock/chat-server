@@ -6,7 +6,7 @@ module.exports = {
     const { text, time } = req.body;
     messages.push({ id, text, time });
     id++;
-    req.status(200).send(messages);
+    res.status(200).send(messages);
   },
   read: (req, res) => {
     res.status(200).send(messages);
@@ -20,7 +20,7 @@ module.exports = {
     var message = messages[messageIndex];
     messages[messageIndex] = {
       id: message.id,
-      text: message.text,
+      text: text || message.text,
       time: message.time,
     };
 
